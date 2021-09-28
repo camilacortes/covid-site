@@ -10,7 +10,7 @@ export default function Countries() {
         .then(response => 
             setData(response.data))
             .catch(err => console.log(err.data))
-            console.log(data)
+            // console.log(data)
     }
 
     useEffect(()=>{

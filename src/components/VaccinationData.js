@@ -1,8 +1,9 @@
 import React , {useState, useEffect} from 'react'
 import axios from 'axios'
+import DisplayVaccines from './DisplayVaccines';
 
 
-export default function VaccinationData() {
+export default function VaccinationData(props) {
     const [fdaApproved, setfdaApproved] = useState([])
 
     const optionsFDA = {
@@ -19,16 +20,39 @@ export default function VaccinationData() {
         .then(response => 
             setfdaApproved(response.data))
             .catch(err => console.log(err.data))
-            console.log(fdaApproved)
       }
    
       useEffect(()=>{
           getApproved()
       },[])
 
+
+      const submit = (e)=>{
+          e.preventDefault()
+          console.log('submitted')
+          display()
+        } 
+
     return (
-        <div>
-            info about vaccines
-        </div>
-    )
+        <>
+        <select>
+            {
+                 fdaApproved.map(vaccine => {
+                    // return <DisplayVaccines 
+                    //  name={vaccine.developerResearcher} 
+                    //  category={vaccine.category}
+                    //  phase={vaccine.phase}
+                    //  fda={vaccine.fda}
+                    //  submit={submit}/>
+                    
+                    return (
+                        <option>{vaccine.developerResearcher}</option>
+                    )
+                    
+                  })
+            }
+        </select>
+            <button onClick={submit} type="submit">Submit</button>
+            </>
+        )
 }

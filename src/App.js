@@ -16,7 +16,7 @@ function App() {
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/unitedstatesdata">USA</Link>
           <Link className="links" to="/resources">Resources</Link>
-          <Link className="links" to="/vaccinationdata">Vaccinated Data</Link>
+          <Link className="links" to="/vaccinationdata">Vaccination Data</Link>
         </ul>
       </nav>
       <Switch>
