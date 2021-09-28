@@ -10,15 +10,21 @@ import {Link, Switch, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div>
+    <div className="main-div">
       <nav className="nav">
         <ul>
           <Link className="links" to="/">Home</Link>
           <Link className="links" to="/unitedstatesdata">USA</Link>
           <Link className="links" to="/resources">Resources</Link>
           <Link className="links" to="/vaccinationdata">Vaccination Data</Link>
+          
         </ul>
+        
       </nav>
+      <div className="image-holder">
+                <img className="covid-img" alt="covid" src="https://imgur.com/K5CLK1p.jpg"></img>
+            </div>
+      <hr/>
       <Switch>
         <Route exact path="/">
           <Home/>

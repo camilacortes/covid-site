@@ -1,14 +1,56 @@
-.nav{
-    display: flex;
-    justify-content: center;
+*{
 }
 
+body > #root > div {
+  height: 100vh;
+  font-family: 'Nanum Gothic', sans-serif;
+
+}
+
+.main-div{
+  height: 380px;
+}
+
+
+.nav{
+    display: inline-block;
+}
+
+.home-h1{
+  font-size: 40px;
+}
+
+.image-holder{
+  display: inline-block;
+  float: right;
+}
+
+.covid-img{
+  
+  display: flex;
+  justify-content: flex-end;
+  height: 87px;
+  width: 92px;
+
+}
+
+.covid-img:hover{
+  opacity:100%;
+  transition:opacity 2s
+}
 
 .links {
     float: left;
     margin: 20px;
+    color: black;
     font-size: 30px;
     text-decoration: none;
+    transition: 1.0s;
+  }
+
+  .links:hover{
+    background: black;
+    color: white
   }
 
   ul {
@@ -18,12 +60,8 @@
     overflow: hidden;
   }
 
-  .covid-img{
-      display: flex;
-      justify-content: center;
-      margin: 70px;
-    height: 195px;
-    width: 205px;
+  hr{
+    border: solid 0.1px lightgray
   }
 
   .home-h1{
@@ -31,8 +69,16 @@
       justify-content: center;
   }
 
+
+  .desc-container{
+    display: flex;
+    justify-content: space-around;
+  }
+
   .home-description{
     display: flex;
     justify-content: center;
+    width: 656px;
+
   }
 

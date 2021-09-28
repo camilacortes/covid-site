@@ -30,7 +30,6 @@ export default function VaccinationData(props) {
       const submit = (e)=>{
           e.preventDefault()
           console.log('submitted')
-          display()
         } 
 
     return (
