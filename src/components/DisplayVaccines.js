@@ -1,6 +1,15 @@
 import React from 'react'
 
 export default function DisplayVaccines(props) {
-    console.log(props.submit)
-    // return (<option value={props.name}>{props.name}</option>)
+    console.log(props)
+    return(
+        <div>
+            <ol>
+                <p>Category: {props.obj.category}</p>    
+                <p>Phase : {props.obj.phase}</p>
+                <p>Funder: {props.obj.funder}</p>
+            </ol>
+        </div>
+    )
+    
 }

@@ -82,3 +82,22 @@ body > #root > div {
 
   }
 
+.resources{
+  display: flex;
+  justify-content: center;
+}
+
+.resource-links{
+  display: flex;
+  justify-content: center;
+}
+
+.drop-down{
+  display: flex;
+  justify-content: center;
+}
+
+.display-vax{
+  display: flex;
+  justify-content: center;
+}

@@ -5,6 +5,7 @@ import Resources from '../src/components/Resources'
 import VaccinationData from './components/VaccinationData';
 
 import {Link, Switch, Route} from "react-router-dom"
+import DisplayVaccines from './components/DisplayVaccines';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         </Route>
         <Route path="/vaccinationdata">
           <VaccinationData/>
+          {/* <DisplayVaccines/> */}
         </Route>
       </Switch>
     </div>

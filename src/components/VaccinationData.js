@@ -5,6 +5,8 @@ import DisplayVaccines from './DisplayVaccines';
 
 export default function VaccinationData(props) {
     const [fdaApproved, setfdaApproved] = useState([])
+    const [selection, setSelection] = useState({})
+
 
     const optionsFDA = {
         method: 'GET',
@@ -17,9 +19,11 @@ export default function VaccinationData(props) {
     
       const getApproved = () => {
         axios.request(optionsFDA)
-        .then(response => 
-            setfdaApproved(response.data))
+        .then(response => {
+            console.log(response)
+            setfdaApproved(response.data)})
             .catch(err => console.log(err.data))
+        
       }
    
       useEffect(()=>{
@@ -27,31 +31,37 @@ export default function VaccinationData(props) {
       },[])
 
 
-      const submit = (e)=>{
-          e.preventDefault()
-          console.log('submitted')
-        } 
+
+    const handleSelect = (e) =>{
+        const {value} = e.target;
+         const currentVax = fdaApproved.find( vaccine => {
+            if(vaccine.developerResearcher === value){
+                return vaccine;
+            }
+        })
+        setSelection(currentVax)
+        console.log(currentVax)
+    }
 
     return (
         <>
-        <select>
+        <div className="drop-down">
+        <select onChange={(e) => handleSelect(e)} >
             {
                  fdaApproved.map(vaccine => {
-                    // return <DisplayVaccines 
-                    //  name={vaccine.developerResearcher} 
-                    //  category={vaccine.category}
-                    //  phase={vaccine.phase}
-                    //  fda={vaccine.fda}
-                    //  submit={submit}/>
-                    
                     return (
-                        <option>{vaccine.developerResearcher}</option>
+                        <option 
+                        value={vaccine.developerResearcher}
+                        >{vaccine.developerResearcher}</option>
                     )
                     
                   })
             }
-        </select>
-            <button onClick={submit} type="submit">Submit</button>
+        </select> 
+        </div>
+            <div className="display-vax">
+            <DisplayVaccines obj={selection}/>
+            </div>
             </>
         )
 }
