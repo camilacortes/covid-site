@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function DisplayVaccines(props) {
-    console.log(props)
     return(
         <div>
             <ol>

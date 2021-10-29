@@ -40,7 +40,6 @@ export default function VaccinationData(props) {
             }
         })
         setSelection(currentVax)
-        console.log(currentVax)
     }
 
     return (
@@ -59,9 +58,9 @@ export default function VaccinationData(props) {
             }
         </select> 
         </div>
-            <div className="display-vax">
+        <div className="display-vax">
             <DisplayVaccines obj={selection}/>
-            </div>
-            </>
+        </div>
+        </>
         )
 }

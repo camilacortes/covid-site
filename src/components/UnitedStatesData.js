@@ -10,7 +10,6 @@ export default function Countries() {
         .then(response => 
             setData(response.data))
             .catch(err => console.log(err.data))
-            // console.log(data)
     }
 
     useEffect(()=>{
@@ -19,17 +18,17 @@ export default function Countries() {
      
     return (
         <div>
-            { data.map(item => {
+            {data.map(item => {
                  return (
                      <div>
-                         <h1>Current COVID information for the United States: </h1>
-                         <p>Total tests administered: {item.totalTestResults}</p>
-                         <p>Positive tests: {item.positive}  Negative Tests: {item.negative}</p>
+                        <h1>Current COVID information for the United States: </h1>
+                        <p>Total tests administered: {item.totalTestResults}</p>
+                        <p>Positive tests: {item.positive}  Negative Tests: {item.negative}</p>
                         <p>Hospitalized in the United States: {item.hospitalized}</p>
                         <p>Currently on a ventilator: {item.onVentilatorCurrently}</p>
                     </div>)
                 })
             }
-            </div>
+        </div>
     )
 }
